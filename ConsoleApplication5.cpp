@@ -67,7 +67,14 @@ shared_ptr <finalValueContainer> blackBoxTester( int max_step_size) {
                                 double blackBoxTest= arbitaryBlackBoxTest(var1, var2, var3, var4, var5, var6, var7);
                                 if (*output<blackBoxTest) {
                                     //hopefully there is no memory leak, if someone remembers how to delete zombie children other than a shared_PTR remind me
-                                    output = make_shared<finalValueContainer>(blackBoxTest, var1, var2, var3, var4, var5, var6, var7);
+                                    output->functionReturn = blackBoxTest;
+                                    output->var1 = var1;
+                                    output->var2 = var2;
+                                    output->var3 = var3;
+                                    output->var4 = var4;
+                                    output->var5 = var5;
+                                    output->var6 = var6;
+                                    output->var7 = var7;
                                 }
                             }
                         }
