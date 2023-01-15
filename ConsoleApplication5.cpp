@@ -35,7 +35,7 @@ public:
 };
 
 double arbitaryBlackBoxTest(double var1, double var2, double var3, double var4, double var5, double var6, double var7) {
-    return (var1 + var2 * var3 / (var1)+var6 * var7 / var2 + var5+var4);
+    return (var1 + var2 * var3+var6 * var7  + var5+var4);
 }
 
 shared_ptr <finalValueContainer> blackBoxTester( int max_step_size) {
