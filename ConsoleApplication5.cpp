@@ -99,4 +99,8 @@ int main()
     
     
     //writing tests RN
+    
+    //okvalues of the test up until 33 are fine, then at that point you get to the part where it will hang for an unreasoably long time. (so you get 7*16=112 parts)
+    // you could change this to accept the top 50 or so values then write a different funciton that takes the top 50 scores and looks "around" those numbers for the best from there
+    
 }
