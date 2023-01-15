@@ -91,5 +91,9 @@ shared_ptr <finalValueContainer> blackBoxTester( int max_step_size) {
 
 int main()
 {
-    std::cout << "Hello World!\n";
+     shared_ptr <finalValueContainer> a = blackBoxTester(2);
+    cout << a->functionReturn << endl;
+    
+    
+    //writing tests RN
 }
