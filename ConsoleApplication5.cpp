@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include <assert.h>
 using namespace std; 
 
 class finalValueContainer {
@@ -64,6 +65,8 @@ shared_ptr <finalValueContainer> blackBoxTester( int max_step_size) {
                                 int step_quantity7 = step_quantity6 - nn;
                                 double var6 = static_cast<double>(nn) / step_divisor;
                                 double var7 = static_cast<double>(step_quantity7) / step_divisor;
+                                assert((var1 + var2 + var3 + var4 + var5 + var6 + var7) < 1.000001);
+                                assert(var1 + var2 + var3 + var4 + var5 + var6 + var7 > 0.999999999);
                                 double blackBoxTest= arbitaryBlackBoxTest(var1, var2, var3, var4, var5, var6, var7);
                                 if (*output<blackBoxTest) {
                                     //hopefully there is no memory leak, if someone remembers how to delete zombie children other than a shared_PTR remind me
