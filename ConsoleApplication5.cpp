@@ -36,32 +36,32 @@ public:
 };
 
 double arbitaryBlackBoxTest(double var1, double var2, double var3, double var4, double var5, double var6, double var7) {
-    return (var1 + var2 * var3+var6 * var7  + var5+var4);
+    return (var1*var4 + var2 * var3+var6 * var7  + var5/5+var4*var5);
 }
 
 shared_ptr <finalValueContainer> blackBoxTester( int max_step_size) {
    int num_variables = 7; //in lisp you could dynamically increase the number of for loops please don't ask how to do this 
   shared_ptr <finalValueContainer> output = make_shared<finalValueContainer>(0, 0, 0, 0, 0, 0, 0, 0);
-    for (int step_size = 1; step_size < max_step_size; step_size *= 2) {
+    for (int step_size = 1; step_size <= max_step_size; step_size *= 2) {
         double step_divisor = step_size * num_variables;
         int step_quantity = step_size * num_variables;
-        for (int ii = 0; ii < step_quantity; ii++) {
+        for (int ii = 0; ii <= step_quantity; ii++) {
             int step_quantity2 = step_quantity - ii;
             //keeping track of sets of step quantities because just subtracting from 1 main Q will give errors later
             double var1 = static_cast<double>(ii) / step_divisor;
-            for (int jj = 0; jj < step_quantity2; jj++) {
+            for (int jj = 0; jj <= step_quantity2; jj++) {
                 int step_quantity3 = step_quantity2 - jj;
                 double var2 = static_cast<double>(jj) / step_divisor;
-                for (int kk = 0; kk < step_quantity3; kk++) {
+                for (int kk = 0; kk <= step_quantity3; kk++) {
                     int step_quantity4 = step_quantity3 - kk;
                     double var3 = static_cast<double>(kk) / step_divisor;
-                    for (int ll = 0; ll < step_quantity4; ll++) {
+                    for (int ll = 0; ll <= step_quantity4; ll++) {
                         int step_quantity5 = step_quantity4 - ll;
                         double var4 = static_cast<double>(ll) / step_divisor;
-                        for (int mm = 0; mm < step_quantity5; mm++) {
+                        for (int mm = 0; mm <= step_quantity5; mm++) {
                             int step_quantity6 = step_quantity5 - mm;
                             double var5 = static_cast<double>(mm) / step_divisor;
-                            for (int nn = 0; nn < step_quantity6; nn++) {
+                            for (int nn = 0; nn <= step_quantity6; nn++) {
                                 int step_quantity7 = step_quantity6 - nn;
                                 double var6 = static_cast<double>(nn) / step_divisor;
                                 double var7 = static_cast<double>(step_quantity7) / step_divisor;
